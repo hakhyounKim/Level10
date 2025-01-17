@@ -38,7 +38,7 @@ class Tank extends GroundUnit implements Repairable{
 
 	@Override
 	public String toString() {
-		return String.format("Tank (%d/ %d )" , hp, MAX_HP);
+		return String.format("Tank (%d / %d)" , hp, MAX_HP);
 	}
 	
 	
@@ -52,10 +52,12 @@ class Soldier extends GroundUnit{
 
 	@Override
 	public String toString() {
-		return String.format("Soldier (%d/ %d )" , hp, MAX_HP);
+		return String.format("Soldier (%d / %d)" , hp, MAX_HP);
 	}
 	
 }
+
+
 class Aircraft extends AirUnit implements Repairable {
 
 	public Aircraft() {
@@ -63,10 +65,12 @@ class Aircraft extends AirUnit implements Repairable {
 	}
 	@Override
 	public String toString() {
-		return String.format("Aircraft (%d/ %d )" , hp, MAX_HP);
+		return String.format("Aircraft (%d / %d)" , hp, MAX_HP);
 	}
 	
 }
+
+
 class DropShip extends AirUnit implements Repairable {
 
 	public DropShip() {
@@ -75,10 +79,11 @@ class DropShip extends AirUnit implements Repairable {
 
 	@Override
 	public String toString() {
-		return String.format("DropShip (%d/ %d )" , hp, MAX_HP);
+		return String.format("DropShip (%d / %d)" , hp, MAX_HP);
 	}
 	
 }
+
 
 class SCV extends GroundUnit implements Repairable{
 
@@ -97,7 +102,7 @@ class SCV extends GroundUnit implements Repairable{
 	}
 	@Override
 	public String toString() {
-		return String.format("SCV (%d/ %d )" , hp, MAX_HP);
+		return String.format("SCV (%d / %d)" , hp, MAX_HP);
 	}
 }
 
