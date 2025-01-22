@@ -1,29 +1,44 @@
 package _11_Object_클래스;
 
-class Bag {
+class Bag{
+	String contains;
+
+	Bag(String contains) {
+		this.contains = contains;
+	}
+
+	@Override
+	public String toString() {
+		return " [ " + contains + "]";
+	}
+	
 	
 }
 
-class Person {
+class Person implements Cloneable{
 	String name;
 	int age;
 	Bag bag;
-	
-	
 	Person(String name, int age, Bag bag) {
 		super();
 		this.name = name;
 		this.age = age;
 		this.bag = bag;
 	}
-
-
 	@Override
 	public String toString() {
-		return name + " : " + age + " : " + bag;
+		return name + " : " + age +"세 : " + bag;
+	} 
+//	
+	public Person clone() {
+		try {
+			Object obj = super.clone();
+			return (Person) obj;
+		} catch (CloneNotSupportedException e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
-	
-
 	
 	
 }
@@ -32,21 +47,22 @@ public class _02_클론 {
 
 	public static void main(String[] args) {
 		
-		Bag bag1 = new Bag("갤럭시탭");
+		Bag bag1 = new Bag("갤랙시탭");
 		Bag bag2 = new Bag("맥북");
 		
-		bag1.contains = "아이패드";
+		
+		bag1.contains =  "아이패드";
+	
+		Person p1 = new Person("홍길동" ,10, bag1);
+
+	//	Person p2 = p1;
 		
 		
-		Person p1 = new Person("김학현", 10, bag1);
-		
-//		Person p2 = p1;
-		
-		Person p2 = p1.clone();
+		Person p2 = p1.clone(); 
 		//p2.bag = bag2;
-		p2.name = "둘리";
+		p2.name ="둘리";
 		System.out.println(p1);
-		System.out.println(p2); 
+		System.out.println(p2);
 
 	}
 
